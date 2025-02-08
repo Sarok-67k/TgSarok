@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic Details - Sarok</title>
+    <style>
+        /* CSS داخل الملف */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .content h2 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .content p {
+            font-size: 0.9em;
+            margin: 5px 0;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Topic Details - Sarok</h1>
+    </header>
+
+    <section class="content" id="topic-content">
+        <!-- تفاصيل الموضوع تضاف هنا تلقائيًا باستخدام JavaScript -->
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Sarok. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript لجلب تفاصيل الموضوع من API البوت
+        const apiUrl = 'YOUR_API_ENDPOINT'; // استبدل بنقطة نهاية API البوت
+        const apiKey = 'YOUR_API_KEY'; // استبدل بمفتاح API
+        const topicId = new URLSearchParams(window.location.search).get('id');
+
+        async function fetchTopicDetails() {
+            try {
+                const response = await fetch(`${apiUrl}?id=${topicId}&api_key=${apiKey}`);
+                const data = await response.json();
+
+                if (data.success) {
+                    const topicContent = document.getElementById('topic-content');
+                    topicContent.innerHTML = `
+                        <img src="${data.post.image}" alt="${data.post.title}">
+                        <h2>${data.post.title}</h2>
+                        <p>${data.post.description}</p>
+                        <a href="${data.post.download_link}" class="btn" target="_blank">Download File</a>
+                    `;
+                } else {
+                    console.error('Failed to fetch topic details:', data.message);
+                }
+            } catch (error) {
+                console.error('Error fetching topic details:', error);
+            }
+        }
+
+        // جلب تفاصيل الموضوع عند تحميل الصفحة
+        fetchTopicDetails();
+    </script>
+</body>
+</html>
