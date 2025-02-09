@@ -1,125 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarok67</title>
-    <style>
-        /* CSS داخل الملف */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 1.5em;
-        }
-
-        .topics {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .topic {
-            background-color: #fff;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .topic img {
-            max-width: 100%;
-            border-radius: 5px;
-        }
-
-        .topic h2 {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-
-        .topic p {
-            font-size: 0.9em;
-            margin: 5px 0;
-        }
-
-        .topic a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            font-size: 0.8em;
-        }
-    </style>
+    <title>Saro76k</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
-        <h1>Sarok Topics</h1>
+        <div class="menu">
+            <div class="hamburger" onclick="toggleContactForm()">☰</div>
+            <h1>Saro76k</h1>
+        </div>
     </header>
 
-    <section class="topics" id="topics">
-        <!-- المواضيع تضاف هنا تلقائيًا باستخدام JavaScript -->
+    <section class="topics">
+        <div class="topic">
+            <h2>Geek Uninstaller</h2>
+            <a href="geek_uninstaller.html">
+            <img src="geek_icon.jpeg" alt="Geek Uninstaller" class="topic-icon">
+            </a>
+            <p>برنامج مجاني لإزالة التطبيقات من الكمبيوتر بكل سهولة.</p>
+        </div>
     </section>
 
+    <div class="contact-form" id="contactForm">
+        <div class="contact-content">
+            <a href="join_us.html">انضم لنا</a>
+            <button onclick="toggleContactForm()">إغلاق</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
     <footer>
-        <p>&copy; 2023 Sarok. All rights reserved.</p>
+        <p>اصدار الموقع 1.0 </p>
+        <p>&copy; 2025 Saro76k. جميع الحقوق محفوظة.</p>
     </footer>
-
-    <script>
-        // JavaScript لجلب البيانات من API البوت
-        const apiUrl = 'YOUR_API_ENDPOINT'; // استبدل بنقطة نهاية API البوت
-        const apiKey = 'ليش تسرق السورس كود ؟؟؟'; // استبدل بمفتاح API
-        const chatId = 'YOUR_CHAT_ID'; // استبدل بمعرف القناة
-
-        async function fetchTopics() {
-            try {
-                const response = await fetch(`${apiUrl}?chat_id=${chatId}&api_key=${apiKey}`);
-                const data = await response.json();
-
-                if (data.success) {
-                    const topicsContainer = document.getElementById('topics');
-                    topicsContainer.innerHTML = ''; // مسح المحتوى القديم
-
-                    data.posts.forEach(post => {
-                        const topicHtml = `
-                            <div class="topic">
-                                <a href="topic.html?id=${post.id}">
-                                    <img src="${post.image}" alt="${post.title}">
-                                    <h2>${post.title}</h2>
-                                    <p>${post.description}</p>
-                                </a>
-                            </div>
-                        `;
-                        topicsContainer.innerHTML += topicHtml;
-                    });
-                } else {
-                    console.error('Failed to fetch topics:', data.message);
-                }
-            } catch (error) {
-                console.error('Error fetching topics:', error);
-            }
-        }
-
-        // جلب البيانات عند تحميل الصفحة
-        fetchTopics();
-    </script>
 </body>
 </html>
