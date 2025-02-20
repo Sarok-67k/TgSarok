@@ -1,194 +1,193 @@
-/* Basic styles */
-body {
-    font-family: 'Arial', sans-serif;
+/* Import Vazirmatn font */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
+
+/* Reset styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #121212; /* Dark background */
-    color: #ffffff; /* White text */
-    direction: rtl; 
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazirmatn', Arial, sans-serif; /* الخط الإيراني */
+    background: #F9F9F9; /* خلفية رمادية خفيفة */
+    color: #333333; /* نص أسود خفيف */
+    line-height: 1.6;
+}
+
+/* Container for centering content */
+.container {
+    max-width: 1200px; /* عرض أقصى للموقع */
+    margin: 0 auto; /* تمركز الوسط */
+    padding: 0 20px; /* فراغ من الجانبين */
 }
 
 header {
-    background-color: #1f1f1f; 
-    color: #fff;
+    background: #FFFFFF; /* خلفية بيضاء */
+    color: #333333; /* نص أسود خفيف */
     padding: 1rem 0;
-    text-align: center;
+    border-bottom: 2px solid #E0E0E0; /* خط رمادي فاتح أسفل الشريط العلوي */
 }
 
-.menu {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
 }
 
-h1 {
-    font-size: 2rem; 
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FF5722; /* لون اللوجو برتقالي داكن */
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.topics {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 1rem;
-    margin: 2rem;
-}
-.topic a{
-    color: #fff;
-    text-decoration: line-through;
-}
-.topic p{
-    text-decoration: none;
-}
-.topic {
-    background-color: #292929; 
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center; 
-    transition: transform 0.3s;
-}
-
-.topic:hover {
-    transform: scale(1.02); /* Zoom effect on hover */
-}
-
-.topic-icon {
-    max-width: 90%; /* Adjust icon size */
-    height: auto;
-    border-radius: 10%;
-    margin-bottom: 0.5rem;
-    width: 50%;
-}
-.program{
-    margin-top: 5%;
-}
-.program-image {
-    margin-top: 20px;
+.nav-links {
+    list-style: none;
     display: flex;
-    margin: auto;
-    align-items: center;
-    max-width:100%; /* Responsive image */
-    display: grid;
-    height: auto;
-    margin-bottom: 1rem; /* Create space below the image */
-    border-radius: 8px; /* Rounded corners */
 }
-.long-text h2{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 0;
-    font-weight: bold;
-    text-align: center;
-    margin: 0 auto ;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    font-display: flex;
-    hyphens: auto;
-    font-size: medium;
+
+.nav-links li {
+    margin-left: 20px;
 }
-.paragraph p{
-    margin: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
-    margin: 0 auto ;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    font-display: flex;
-    hyphens: auto;
-    font-size: medium;
-}
-.alert h2{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 0;
-    font-weight: bold;
-    text-align: center;
-    margin: 0 auto ;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    font-display: flex;
-    hyphens: auto;
-    font-size: medium;
-    margin-bottom: 5%;
-    margin-top: 5%;
-}
-.btn {
-    margin: 0 auto;
-    display:flex;
-    width: 7%;
-    flex-direction: column;
+
+.nav-links a {
+    color: #333333; /* نص أسود خفيف */
     text-decoration: none;
-    margin-bottom: 5%;
-    justify-items: center;
-    align-items: center;
-    padding: 0.70rem 1.7rem;
-    background-color: #8e1792; /* Example purple color */
-    border: 2px #ffffff solid ;
-    color: #ffffff;
-    border-radius: 30px;
-    transition: background-color 0.3s ease;
-    font-weight: bold;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-bottom: 2px solid transparent; /* حدود تحتية شفافة عند البداية */
+    transition: border-bottom 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #e200b1;
+.nav-links a:hover {
+    border-bottom: 2px solid #FF5722; /* حدود تحتية برتقالية عند التمرير */
 }
 
-footer {
-    background-color: #1f1f1f; 
-    color: #fff;
-    padding: 1rem 0;
+#home {
     text-align: center;
-}
-/* Contact form styles */
-.contact-form {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 101; 
-    justify-content: center; 
-    align-items: center; 
+    padding: 50px 0;
+    background: #FFFFFF; /* خلفية بيضاء */
 }
 
-.contact-content {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    text-align: center;
-    width: 300px; 
+#home input[type="text"], button {
+    padding: 10px 15px;
+    margin: 10px;
+    font-size: 1rem;
+    border: 2px solid #E0E0E0; /* حدود رمادية خفيفة */
+    background: #FFFFFF; /* خلفية بيضاء */
+    color: #333333; /* نص أسود خفيف */
 }
 
-.contact-content h3 {
-    margin-bottom: 1rem;
-}
-
-textarea {
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-.contact-content button {
-    padding: 0.5rem 1rem;
-    background-color: #ffffff; 
-    color: #000;
+button {
+    background: #FF5722; /* خلفية برتقالية داكنة */
+    color: #FFFFFF; /* نص أبيض */
     border: none;
-    border-radius: 4px;
     cursor: pointer;
 }
 
-.contact-content button:hover {
-    background-color: #ccc;
+button:hover {
+    background: #E64A19; /* خلفية برتقالية داكنة أكثر عند التمرير */
 }
-.back{
-    text-decoration: lab(from color l a b);
-    color: rgb(151, 0, 211);
-     }
+
+#categories {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.category-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category {
+    background: #FFFFFF; /* خلفية بيضاء */
+    color: #333333; /* نص أسود خفيف */
+    padding: 10px 20px;
+    margin: 10px;
+    border: 2px solid #E0E0E0; /* حدود رمادية خفيفة */
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.category:hover {
+    background: #FF5722; /* خلفية برتقالية داكنة عند التمرير */
+    color: #FFFFFF; /* نص أبيض عند التمرير */
+}
+
+.tool-card {
+    background: #FFFFFF; /* خلفية بيضاء */
+    border: 2px solid #E0E0E0; /* حدود رمادية خفيفة */
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    display: inline-block;
+    width: calc(33.33% - 40px); /* توزيع ثلاثي للبطاقات */
+}
+
+.tool-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.download-btn {
+    background: #FF5722; /* خلفية برتقالية داكنة */
+    color: #FFFFFF; /* نص أبيض */
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.download-btn:hover {
+    background: #E64A19; /* خلفية برتقالية داكنة أكثر عند التمرير */
+}
+
+/* قسم الإشعارات */
+#newsletter {
+    padding: 20px 0;
+    text-align: center;
+    background: #FFFFFF; /* خلفية بيضاء */
+    color: #333333; /* نص أسود خفيف */
+    border-top: 2px solid #E0E0E0; /* خط رمادي فاتح أعلى القسم */
+    border-bottom: 2px solid #E0E0E0; /* خط رمادي فاتح أسفل القسم */
+}
+
+#newsletter h2 {
+    margin-bottom: 20px;
+}
+
+#newsletter input, #newsletter button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #E0E0E0; /* حدود رمادية خفيفة */
+}
+
+#newsletter button {
+    background: #FF5722; /* خلفية برتقالية داكنة */
+    color: #FFFFFF; /* نص أبيض */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #FFFFFF; /* خلفية بيضاء */
+    color: #333333; /* نص أسود خفيف */
+    border-top: 2px solid #E0E0E0; /* خط رمادي فاتح أعلى التذييل */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .tool-card {
+        width: calc(50% - 40px); /* توزيع ثنائي للبطاقات */
+    }
+}
+
+@media (max-width: 576px) {
+    .tool-card {
+        width: 100%; /* توزيع واحد للبطاقات */
+    }
+}

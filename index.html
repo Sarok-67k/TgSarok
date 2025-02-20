@@ -1,42 +1,82 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saro76k</title>
+    <title>أدوات وبرامج الكمبيوتر</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <header>
-        <div class="menu">
-            <div class="hamburger" onclick="toggleContactForm()">☰</div>
-            <h1>Saro76k</h1>
-        </div>
-    </header>
+    <!-- Container for centering content -->
+    <div class="container">
 
-    <section class="topics">
-        <div class="topic">
-            <h2>Geek Uninstaller</h2>
-            <a href="geek_uninstaller.html">
-            <img src="geek_icon.jpeg" alt="Geek Uninstaller" class="topic-icon">
-            </a>
-            <p>برنامج مجاني لإزالة التطبيقات من الكمبيوتر بكل سهولة.</p>
-        </div>
-    </section>
+        <!-- شريط التنقل -->
+        <header>
+            <nav>
+                <div class="logo">أدوات وبرامج المستقبل</div>
+                <ul class="nav-links">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#categories">تصنيفات</a></li>
+                    <li><a href="#latest">أحدث الأدوات</a></li>
+                    <li><a href="#newsletter">اشترك في النشرة</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <div class="contact-form" id="contactForm">
-        <div class="contact-content">
-            <a href="join_us.html">انضم لنا</a>
-            <button onclick="toggleContactForm()">إغلاق</button>
-        </div>
+        <!-- القسم الرئيسي -->
+        <section id="home">
+            <h1>مرحبًا بك في موقع أدوات وبرامج المستقبل</h1>
+            <p>تحميل أفضل الأدوات والبرامج لأنظمة Windows وLinux مجانًا.</p>
+            <input type="text" id="search" placeholder="ابحث عن أداة أو برنامج...">
+            <button onclick="searchTools()">ابحث</button>
+        </section>
+
+        <!-- تصنيفات الأدوات -->
+        <section id="categories">
+            <h2>تصنيفات الأدوات</h2>
+            <div class="category-list">
+                <div class="category"><a href="#">أدوات الذكاء الاصطناعي</a></div>
+                <div class="category"><a href="#">أدوات الحماية الإلكترونية</a></div>
+                <div class="category"><a href="#">أدوات البرمجة المتقدمة</a></div>
+                <div class="category"><a href="#">أدوات الواقع الافتراضي</a></div>
+            </div>
+        </section>
+
+        <!-- أحدث الأدوات -->
+        <section id="latest">
+            <h2>أحدث الأدوات</h2>
+            <div class="tool-card">
+                <img src="tool1.png" alt="أداة 1">
+                <h3>اسم الأداة 1</h3>
+                <p>وصف مختصر للأداة...</p>
+                <a href="Pages\geek_uninstaller\geek_uninstaller.html" class="download-btn">تحميل</a>
+            </div>
+            <div class="tool-card">
+                <img src="tool2.png" alt="أداة 2">
+                <h3>اسم الأداة 2</h3>
+                <p>وصف مختصر للأداة...</p>
+                <a href="#" class="download-btn">تحميل</a>
+            </div>
+        </section>
+
+        <!-- قسم النشرة البريدية -->
+        <section id="newsletter">
+            <h2>اشترك في نشرتنا البريدية</h2>
+            <p>احصل على أحدث التقنيات والأدوات مباشرة إلى بريدك الإلكتروني.</p>
+            <form>
+                <input type="email" placeholder="بريدك الإلكتروني" required>
+                <button type="submit">اشترك الآن</button>
+            </form>
+        </section>
+
+        <!-- تذييل الصفحة -->
+        <footer>
+            <p>&copy; 2023 موقع أدوات وبرامج المستقبل. جميع الحقوق محفوظة.</p>
+        </footer>
+
     </div>
 
     <script src="scripts.js"></script>
-    <footer>
-        <p>اصدار الموقع 1.0 </p>
-        <p>&copy; 2025 Saro76k. جميع الحقوق محفوظة.</p>
-    </footer>
 </body>
 </html>

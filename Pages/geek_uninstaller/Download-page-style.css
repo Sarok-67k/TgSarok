@@ -1,0 +1,167 @@
+/* Import Vazirmatn font */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazirmatn', Arial, sans-serif; /* الخط الإيراني */
+    background: #F9F9F9; /* خلفية رمادية خفيفة */
+    color: #333333; /* نص أسود خفيف */
+    line-height: 1.6;
+}
+
+/* Container for centering content */
+.container {
+    max-width: 1200px; /* عرض أقصى للموقع */
+    margin: 0 auto; /* تمركز الوسط */
+    padding: 0 20px; /* فراغ من الجانبين */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF; /* خلفية بيضاء */
+    color: #333333; /* نص أسود خفيف */
+    padding: 1rem 0;
+    border-bottom: 2px solid #E0E0E0; /* خط رمادي فاتح أسفل الشريط العلوي */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2196F3; /* لون اللوجو أزرق فاتح */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #333333; /* نص أسود خفيف */
+    text-decoration: none;
+    border-bottom: 2px solid transparent; /* حدود تحتية شفافة عند البداية */
+    transition: border-bottom 0.3s ease;
+}
+
+.nav-links a:hover {
+    border-bottom: 2px solid #2196F3; /* حدود تحتية زرقاء عند التمرير */
+}
+
+.hamburger {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* Alert Section */
+.alert {
+    background-color: #34495e; /* خلفية قسم التنبيه */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Main Content */
+.content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.centered-content {
+    text-align: center; /* تمركز المحتوى */
+    max-width: 600px; /* عرض أقصى للمحتوى */
+    margin: 0 auto; /* تمركز الوسط */
+}
+
+.program-image {
+    max-width: 100px; /* حجم صغير للصور */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* تمركز الصورة */
+    display: block;
+}
+
+.description {
+    margin-bottom: 20px;
+}
+
+.features-list {
+    margin-bottom: 20px;
+}
+
+.features-list ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/* Download Button */
+.download-section {
+    text-align: center;
+}
+
+.btn {
+    background-color: #2196F3; /* زر أزرق فاتح */
+    color: #FFFFFF; /* نص أبيض */
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1976D2; /* تغيير لون الزر عند التمرير */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #FFFFFF; /* خلفية بيضاء */
+    color: #333333; /* نص أسود خفيف */
+    border-top: 2px solid #E0E0E0; /* خط رمادي فاتح أعلى التذييل */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #FFFFFF;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
